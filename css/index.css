@@ -1,0 +1,71 @@
+/* Change the background color of the page body
+Change the default text color
+Customize the font family
+
+    STRETCH GOAL (optional):load in a font family from Google Fonts
+
+Add spacing (padding/margin) between sections
+Change the alignment of the content of one of your sections
+Change the font size, weight, and color of headings
+Transform the style of your Name at the top of the page
+
+    STRETCH GOAL (optional): add a picture of yourself to HTML and/or CSS (remember to include accessibility aspects if you add any images!)
+
+Transform the "Experience" list items into styled blocks
+Transform the style of the "Connect" links
+
+    STRETCH GOAL (optional): make or use social media icons to replace your link text with images */
+
+body {
+    background-color: #ececec;
+    color: #3d3d3d;
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    padding: 0px 30px;
+}
+
+h1 {
+    color: #225;
+    font-size: 42px;
+    margin-bottom: 50px;
+    font-weight: 500;
+}
+
+#about, #experience {
+    margin-bottom: 50px;
+}
+
+#experience li {
+    margin-bottom: 5px;
+    list-style-type: circle;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 28px;
+    color: #3d3d3d;
+    display: inline;
+    padding-right: 10px;
+}
+
+#connect {
+    text-align: center;
+    border-top: 5px dotted #e3e3e3;
+    padding-top: 30px;
+}
+
+#connect img {
+    width: 50px;
+    height: 50px;
+}
+
+a {
+    color: #1d7388;
+    text-decoration: none;
+}
+.center-text {
+    text-align: center;
+}
