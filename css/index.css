@@ -1,21 +1,3 @@
-/* Change the background color of the page body
-Change the default text color
-Customize the font family
-
-    STRETCH GOAL (optional):load in a font family from Google Fonts
-
-Add spacing (padding/margin) between sections
-Change the alignment of the content of one of your sections
-Change the font size, weight, and color of headings
-Transform the style of your Name at the top of the page
-
-    STRETCH GOAL (optional): add a picture of yourself to HTML and/or CSS (remember to include accessibility aspects if you add any images!)
-
-Transform the "Experience" list items into styled blocks
-Transform the style of the "Connect" links
-
-    STRETCH GOAL (optional): make or use social media icons to replace your link text with images */
-
 body {
     background-color: #ececec;
     color: #3d3d3d;
@@ -23,8 +5,9 @@ body {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    font-size: 18px;
-    padding: 0px 30px;
+    font-size: 16px;
+    margin: 0;
+    margin-bottom: 30px;
 }
 
 h1 {
@@ -32,15 +15,24 @@ h1 {
     font-size: 42px;
     margin-bottom: 50px;
     font-weight: 500;
+    text-align: center;
 }
 
-#about, #experience {
-    margin-bottom: 50px;
+#about, #experience, #skills, #projects {
+    margin: 0 auto 50px;
+    width: 800px;
+    scroll-margin-top: 80px;
+}
+
+#experience ul {
+    padding-left: 25px;
 }
 
 #experience li {
-    margin-bottom: 5px;
+    padding-left: 10px;
+    margin-bottom: 10px;
     list-style-type: circle;
+    list-style-position: outside;
 }
 
 h2 {
@@ -51,10 +43,30 @@ h2 {
     padding-right: 10px;
 }
 
+/* Connect section */
+
 #connect {
-    text-align: center;
     border-top: 5px dotted #e3e3e3;
     padding-top: 30px;
+}
+
+#connect h2 {
+    display: block;
+    text-align: center;
+    margin: 0;
+}
+
+.mylinks p {
+    width: 100%;
+    text-align: center;
+}
+
+.linkImgs {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 120px;
+    margin: 0 auto;
 }
 
 #connect img {
@@ -66,6 +78,43 @@ a {
     color: #1d7388;
     text-decoration: none;
 }
-.center-text {
+
+/* Nav */
+
+nav {
+    display: flex;
+    border-bottom: 1px #b1b1b1 solid;
+    justify-content: center;
+    position: sticky;
+    top: 0px;
+    background: #ececec;
+}
+
+nav > a {
     text-align: center;
+    padding: 20px 30px;
+}
+
+/* Experience Grid */
+
+.expItem {
+    margin-top: 18px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.title {
+    justify-self: flex-start;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.timeframe {
+    justify-self: flex-end;
+    font-style: italic;
+    font-size: 18px;
+}
+
+.description {
+    grid-column: span 2;
 }
