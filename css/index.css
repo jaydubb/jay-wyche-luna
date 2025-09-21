@@ -25,11 +25,11 @@ h1 {
     scroll-margin-top: 5em;
 }
 
-.experience-list {
+.list {
     padding-left: 1.7em;
 }
 
-.experience-list-item {
+.list-item {
     padding-left: .7em;
     margin-bottom: .7em;
     list-style-type: circle;
@@ -48,7 +48,7 @@ h2 {
 
 #connect {
     border-top: 5px dotted #e3e3e3;
-    padding-top: 30px;
+    padding-top: 2em;
 }
 
 #connect h2 {
@@ -133,11 +133,11 @@ nav > a {
         width: 90%;
     }
 
-    .experience-list {
+    .list {
         padding-left: 1em;
     }
 
-    .experience-list-item {
+    .list-item {
         padding-left: .25em;
     }
 
