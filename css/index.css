@@ -5,42 +5,43 @@ body {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    font-size: 16px;
+    font-size: 1rem;
     margin: 0;
-    margin-bottom: 30px;
+    margin-bottom: 2em;
 }
 
 h1 {
     color: #225;
-    font-size: 42px;
-    margin-bottom: 50px;
+    font-size: 2.75rem;
+    margin: 2.75rem 0;
     font-weight: 500;
     text-align: center;
 }
 
 #about, #experience, #skills, #projects {
-    margin: 0 auto 50px;
-    width: 800px;
-    scroll-margin-top: 80px;
+    margin: 0 auto 3em;
+    width: 50%;
+    max-width: 750px;
+    scroll-margin-top: 5em;
 }
 
-#experience ul {
-    padding-left: 25px;
+.experience-list {
+    padding-left: 1.7em;
 }
 
-#experience li {
-    padding-left: 10px;
-    margin-bottom: 10px;
+.experience-list-item {
+    padding-left: .7em;
+    margin-bottom: .7em;
     list-style-type: circle;
     list-style-position: outside;
 }
 
 h2 {
     font-weight: 600;
-    font-size: 28px;
+    font-size: 1.75rem;
     color: #3d3d3d;
     display: inline;
-    padding-right: 10px;
+    padding-right: .5em;
 }
 
 /* Connect section */
@@ -86,35 +87,76 @@ nav {
     border-bottom: 1px #b1b1b1 solid;
     justify-content: center;
     position: sticky;
-    top: 0px;
+    top: 0;
     background: #ececec;
 }
 
 nav > a {
     text-align: center;
-    padding: 20px 30px;
+    padding: 1.2em 2em;
 }
 
 /* Experience Grid */
 
 .expItem {
-    margin-top: 18px;
+    margin-top: 1.2em;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .title {
     justify-self: flex-start;
-    font-size: 18px;
     font-weight: 600;
+    grid-column: span 3;
+    font-size: 1.125rem;
 }
 
 .timeframe {
     justify-self: flex-end;
     font-style: italic;
-    font-size: 18px;
+    grid-column: span 1;
+    font-size: 1rem;
 }
 
 .description {
-    grid-column: span 2;
+    grid-column: span 4;
+}
+
+@media (max-width: 800px) {
+    h1 {
+        font-size: 2.75rem;
+        margin: 1.5rem 0;
+    }
+
+    #about, #experience, #skills, #projects {
+        margin: 0 1em 2em;
+        width: 90%;
+    }
+
+    .experience-list {
+        padding-left: 1em;
+    }
+
+    .experience-list-item {
+        padding-left: .25em;
+    }
+
+    .title {
+        grid-column: span 4;
+    }
+
+    .timeframe {
+        grid-column: span 4;
+        justify-self: flex-start;
+        margin-top: .25em;
+    }
+
+    nav {
+        justify-content: space-evenly;
+    }
+
+    nav > a {
+        text-align: center;
+        padding: 1.2em .25em;
+    }
 }
