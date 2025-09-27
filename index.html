@@ -7,9 +7,11 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">        
         <link href="css/index.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
-        <nav><a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#connect">Connect</a></nav>
+        <nav><a href="javascript:void(0);" class="navIcon" onclick="mobileNav()">
+    <i class="fa fa-bars"></i><a href="#about" class="navLink" onclick="hideNav()">About</a><a href="#experience" class="navLink" onclick="hideNav()">Experience</a><a href="#skills" class="navLink" onclick="hideNav()">Skills</a><a href="#projects" class="navLink" onclick="hideNav()">Projects</a><a href="#connect" class="navLink" onclick="hideNav()">Connect</a><a href="#contact" class="navLink" onclick="hideNav()">Message me</a></nav>
         <h1>Jay Wyche</h1>
         <section id="about">
             <h2>About</h2> <img src="images/about.png" alt="An emoji of my face">
@@ -85,7 +87,7 @@
             <ul class="list">
             </ul>
         </section>
-        
+
         <section id="connect">
             <h2>Connect</h2>
             <div class="mylinks">
@@ -93,6 +95,25 @@
                 <div class="linkImgs"><a href="https://github.com/jaydubb" target="_blank"><img src="images/github-icon.svg" alt="Github icon"></a> <a href="https://www.linkedin.com/in/jay-w-b1192212/" target="_blank"><img src="images/linkedin-icon.svg" alt="LinkedIn icon"></a></div>
             </div>
         </section>
+
+        <section id="contact">
+            <h3>Message me</h3>
+            <form name="leave_message">
+                <label for="usersName">Name:</label>
+                <input type="text" name="usersName" required="true">
+                <label for="usersEmail">Email:</label>
+                <input type="email" name="usersEmail" required="true">
+                <label for="usersMessage">Message:</label>
+                <textarea name="usersMessage" required="true"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section id="messages">
+            <h3>Messages:</h3>
+            <ul class="msgList"></ul>
+        </section>
+
         <script src="js/index.js"></script>
     </body>
 </html>
