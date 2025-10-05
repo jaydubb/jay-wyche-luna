@@ -96,5 +96,4 @@ const gitFetch = async () => {
     }
 }
 
-
 gitFetch();
