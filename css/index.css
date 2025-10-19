@@ -176,7 +176,7 @@ form > button {
     list-style-type: none;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 830px) {
     h1 {
         font-size: 2.75rem;
         margin: 1.5rem 0;
