@@ -71,3 +71,29 @@ const headerToggle = (head,list) => {
         }
     }
 };
+
+const gitFetch = async () => {
+    try{
+        const response = await fetch('https://api.github.com/users/jaydubb/repos');
+        const gitData = await response.json();
+        if(!response.ok){
+            throw new Error(response.status);
+        }
+        const repositories = [];
+        for(let repo of gitData){
+            repositories.push(repo.name);
+        }
+        const projectSection = document.getElementById('projects');
+        const projectList = projectSection.querySelector('ul');
+        for(let item of repositories) {
+            let project = document.createElement('li');
+            project.innerHTML = `${item}`;
+            project.classList.add('list-item');
+            projectList.appendChild(project);
+        }
+    } catch(error) {
+        console.error(error);
+    }
+}
+
+gitFetch();
