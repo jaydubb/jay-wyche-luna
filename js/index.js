@@ -1,7 +1,4 @@
 const body = document.querySelector('body');
-const footer = document.createElement('footer');
-body.append(footer);
-
 const today = new Date();
 const thisYear = today.getFullYear();
 const copyright = document.createElement('p');
@@ -10,9 +7,9 @@ const skills = ["JavaScript", "HTML", "CSS", "Product Design", "Data Visualizati
 const skillsSection = document.getElementById('skills');
 const skillList = skillsSection.querySelector('ul');
 const navLinks = document.querySelectorAll('.navLink');
-copyright.innerHTML = "Jay Wyche " + copySymbol + " " + thisYear;
+const footer = document.createElement('footer');
 
-footer.append(copyright);
+// Add skills list
 
 for (let skill of skills) {
     let item = document.createElement('li');
@@ -21,8 +18,13 @@ for (let skill of skills) {
     skillList.append(item);
 }
 
+// Footer 
+
+body.append(footer);
 footer.style.textAlign = "center";
 footer.style.fontSize = ".8em";
+
+// Responsive hamburger toggle
 
 function mobileNav() {
     navLinks.forEach(link => {
@@ -35,6 +37,8 @@ function hideNav() {
         link.classList.remove('showLink')
     });
 }
+
+// Message me section
 
 const messageForm = document.getElementsByName('leave_message');
 messageForm[0].addEventListener('submit', event => {
@@ -72,6 +76,8 @@ const headerToggle = (head,list) => {
     }
 };
 
+// Git API Fetch 
+
 const gitFetch = async () => {
     try{
         const response = await fetch('https://api.github.com/users/jaydubb/repos');
@@ -80,15 +86,22 @@ const gitFetch = async () => {
             throw new Error(response.status);
         }
         const repositories = [];
+        let repoItems = [];
         for(let repo of gitData){
-            repositories.push(repo.name);
+            repoItems = [];
+            repoItems.push(repo.name, repo.html_url)
+            repositories.push(repoItems);
         }
         const projectSection = document.getElementById('projects');
         const projectList = projectSection.querySelector('ul');
-        for(let item of repositories) {
+        for(let r in repositories) {
             let project = document.createElement('li');
-            project.innerHTML = `${item}`;
+            let projectLink = document.createElement('a');
+            projectLink.innerHTML = repositories[r][0];
+            projectLink.href = repositories[r][1];
+            projectLink.target = "_blank";
             project.classList.add('list-item');
+            project.appendChild(projectLink);
             projectList.appendChild(project);
         }
     } catch(error) {
@@ -97,3 +110,8 @@ const gitFetch = async () => {
 }
 
 gitFetch();
+
+// Page copyright
+
+copyright.innerHTML = "Jay Wyche " + copySymbol + " " + thisYear;
+footer.append(copyright);
